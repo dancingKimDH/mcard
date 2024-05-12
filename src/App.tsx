@@ -38,8 +38,8 @@ function App() {
         <Button full={true}>클릭해 주세요</Button>
       </div>
       {/* <Input aria-invalid="true" placeholder="로그인" /> */}
-      <TextField label="아이디" />
-      <TextField label="패스워드" />
+      <TextField label="아이디" helpMessage="아이디를 입력해 주세요" />
+      <TextField hasError={true} label="패스워드" />
     </div>
   )
 }
