@@ -7,6 +7,9 @@ import React from 'react'
 import logo from './logo.svg'
 import './App.css'
 
+import Text from '@shared/Text'
+import Button from '@shared/Button'
+
 const bold = css`
   font-weight: 900;
 `
@@ -14,30 +17,23 @@ const containerStyles = css`
   background-color: pink;
   ${bold};
 `
-const Button = styled.button`
-  width: 200px;
-  height: 100px;
-  ${bold};
-`
 
 function App() {
   return (
     <div className="App" css={containerStyles}>
-      <Button>스타일 버튼</Button>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Text typography="t1" display="block" color="red">
+        T1
+      </Text>
+      <Text typography="t2">T2</Text>
+      <Text typography="t3">T3</Text>
+      <Text typography="t4">T4</Text>
+      <Text typography="t5">T5</Text>
+      <Text typography="t6">T6</Text>
+      <div style={{ height: 10, width: '100%', background: 'white' }}>
+        <Button>클릭해 주세요</Button>
+        <Button>클릭해 주세요</Button>
+        <Button>클릭해 주세요</Button>
+      </div>
     </div>
   )
 }
