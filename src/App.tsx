@@ -1,14 +1,13 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from '@emotion/react'
-import styled from '@emotion/styled'
 
-import React from 'react'
-import logo from './logo.svg'
 import './App.css'
 
 import Text from '@shared/Text'
 import Button from '@shared/Button'
+import Input from '@shared/Input'
+import TextField from '@shared/TextField'
 
 const bold = css`
   font-weight: 900;
@@ -20,7 +19,7 @@ const containerStyles = css`
 
 function App() {
   return (
-    <div className="App" css={containerStyles}>
+    <div className="App">
       <Text typography="t1" display="block" color="red">
         T1
       </Text>
@@ -30,10 +29,17 @@ function App() {
       <Text typography="t5">T5</Text>
       <Text typography="t6">T6</Text>
       <div style={{ height: 10, width: '100%', background: 'white' }}>
-        <Button>클릭해 주세요</Button>
-        <Button>클릭해 주세요</Button>
-        <Button>클릭해 주세요</Button>
+        <Button disabled={true} color="success">
+          클릭해 주세요
+        </Button>
+        <Button color="error" weak={true}>
+          클릭해 주세요
+        </Button>
+        <Button full={true}>클릭해 주세요</Button>
       </div>
+      {/* <Input aria-invalid="true" placeholder="로그인" /> */}
+      <TextField label="아이디" />
+      <TextField label="패스워드" />
     </div>
   )
 }
