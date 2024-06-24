@@ -46,6 +46,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
           aria-invalid={hasError}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          {...props}
         />
         {helpMessage ? (
           <Text
