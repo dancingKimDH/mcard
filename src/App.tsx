@@ -8,6 +8,9 @@ import Text from '@shared/Text'
 import Button from '@shared/Button'
 import Input from '@shared/Input'
 import TextField from '@shared/TextField'
+import Alert from './components/shared/Alert'
+
+import { useAlertContext } from './contexts/AlertContext'
 
 const bold = css`
   font-weight: 900;
@@ -18,6 +21,7 @@ const containerStyles = css`
 `
 
 function App() {
+  const { open } = useAlertContext()
   return (
     <div className="App">
       <Text typography="t1" display="block" color="red">
@@ -48,6 +52,22 @@ function App() {
       <div>
         <TextField label="아이디"></TextField>
       </div>
+      {/* <Alert
+        onButtonClick={() => {}}
+        open={true}
+        title="알람이 떴습니다"
+      ></Alert> */}
+      <Button
+        onClick={() => {
+          open({
+            title: 'Alert Enabled',
+            description: '내역을 확인해 주세요',
+            onButtonClick: () => {},
+          })
+        }}
+      >
+        Alert
+      </Button>
     </div>
   )
 }
